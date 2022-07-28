@@ -1,0 +1,12 @@
+menuconfig MODULES_MC_QUAT_CONTROL
+	bool "mc_quat_control"
+	default n
+	---help---
+		Enable support for mc_quat_control
+
+menuconfig USER_MC_QUAT_CONTROL
+	bool "mc_quat_control running as userspace module"
+	default n
+	depends on BOARD_PROTECTED && MODULES_MC_QUAT_CONTROL
+	---help---
+		Put mc_quat_control in userspace memory
