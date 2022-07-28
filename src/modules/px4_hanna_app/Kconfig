@@ -1,0 +1,12 @@
+menuconfig MODULES_PX4_HANNA_APP
+	bool "px4_hanna_app"
+	default n
+	---help---
+		Enable support for px4_hanna_app
+
+menuconfig USER_PX4_HANNA_APP
+	bool "px4_hanna_app running as userspace module"
+	default y
+	depends on BOARD_PROTECTED && MODULES_MC_POS_CONTROL
+	---help---
+		Put px4_hanna_app in userspace memory
