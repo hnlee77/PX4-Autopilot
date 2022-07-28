@@ -56,6 +56,7 @@
 #include <lib/mathlib/math/filter/AlphaFilter.hpp>
 
 #include <AttitudeControl.hpp>
+#include <AttControl.h>
 
 using namespace time_literals;
 
@@ -93,6 +94,7 @@ private:
 	void generate_attitude_setpoint(const matrix::Quatf &q, float dt, bool reset_yaw_sp);
 
 	AttitudeControl _attitude_control; /**< class for attitude control calculations */
+	att_controllerModelClass _att_control; // my controller
 
 	uORB::SubscriptionInterval _parameter_update_sub{ORB_ID(parameter_update), 1_s};
 
